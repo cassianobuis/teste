@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFit Academy - Transforme seu Corpo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        
+    
+         
+    <header class="header">
+        <div class="logo">
+            <h1>Power<span>Fit</span></h1>
+        </div>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#planos">Planos</a>
+            <a href="#aulas">Aulas</a>
+            <a href="#treinadores">Treinadores</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+        
+        <div class="shopping-cart">
+            <div class="cart-header">
+                <h3>Seu Carrinho</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+            <div class="cart-items">
+                <!-- Itens serão adicionados dinamicamente -->
+            </div>
+            <div class="cart-total">
+                <h4>Total: <span class="total">R$ 0,00</span></h4>
+            </div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="swiper home-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(banner.jpg) no-repeat;">
+                    <div class="content">
+                        <h3>Transforme seu corpo</h3>
+                        <p>Equipamentos modernos e treinadores especializados para te ajudar a alcançar seus objetivos.</p>
+                        <a href="#planos" class="btn">Comece Agora</a>
+                    </div>
+                </div>
+                <div class="swiper-slide slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(banner2.jpg) no-repeat;">
+                    <div class="content">
+                        <h3>Aulas em Grupo</h3>
+                        <p>Box, CrossFit, Yoga e muito mais para você se exercitar com motivação extra.</p>
+                        <a href="#aulas" class="btn">Ver Aulas</a>
+                    </div>
+                </div>
+                <div class="swiper-slide slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(banner3.jpg) no-repeat;">
+                    <div class="content">
+                        <h3>Resultados Garantidos</h3>
+                        <p>Nossos alunos alcançam resultados impressionantes em poucas semanas.</p>
+                        <a href="#planos" class="btn">Assine Já</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="planos" id="planos">
+        <h1 class="heading">Nossos <span>Planos</span></h1>
+        <div class="box-container">
+            <div class="box">
+                <div class="box-3d">
+                    <h3>Plano Básico</h3>
+                    <div class="price">R$55<span>99</span>/mês</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acesso à academia</li>
+                        <li><i class="fas fa-check"></i> Horário comercial</li>
+                        <li><i class="fas fa-times"></i> Aulas em grupo</li>
+                        <li><i class="fas fa-times"></i> Acompanhamento personalizado</li>
+                    </ul>
+                    <button class="btn add-to-cart" data-name="Plano Básico" data-price="99">Assinar</button>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-3d">
+                    <h3>Plano Intermediário</h3>
+                    <div class="price">R$99<span>149</span>/mês</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acesso à academia</li>
+                        <li><i class="fas fa-check"></i> Horário estendido</li>
+                        <li><i class="fas fa-check"></i> Aulas em grupo ilimitadas</li>
+                        <li><i class="fas fa-times"></i> Acompanhamento personalizado</li>
+                    </ul>
+                    <button class="btn add-to-cart" data-name="Plano Intermediário" data-price="149">Assinar</button>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-3d">
+                    <h3>Plano Premium</h3>
+                    <div class="price">R$149<span>249</span>/mês</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acesso 24 horas</li>
+                        <li><i class="fas fa-check"></i> Aulas em grupo ilimitadas</li>
+                        <li><i class="fas fa-check"></i> Acompanhamento personalizado</li>
+                        <li><i class="fas fa-check"></i> Avaliação física mensal</li>
+                    </ul>
+                    <button class="btn add-to-cart" data-name="Plano Premium" data-price="249">Assinar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="aulas" id="aulas">
+        <h1 class="heading">Nossas <span>Aulas</span></h1>
+        <div class="box-container">
+            <div class="aula-box">
+                <div class="aula-3d">
+                    <img src="cr.jpg" alt="CrossFit">
+                    <h3>CrossFit</h3>
+                    <p>Aulas intensas que combinam levantamento de peso, ginástica e condicionamento metabólico.</p>
+                    <div class="price">R$ 200/aula ou <span>incluído nos planos</span></div>
+                    <button class="btn add-to-cart" data-name="Aula de CrossFit" data-price="25">Agendar</button>
+                </div>
+            </div>
+            <div class="aula-box">
+                <div class="aula-3d">
+                    <img src="box.jpg" alt="Yoga">
+                    <h3>Box</h3>
+                    <p>Melhore flexibilidade, força e defesa  com nossas aulas de box.</p>
+                    <div class="price">R$250/aula ou <span>incluído nos planos</span></div>
+                    <button class="btn add-to-cart" data-name="Aula de Yoga" data-price="20">Agendar</button>
+                </div>
+            </div>
+            <div class="aula-box">
+                <div class="aula-3d">
+                    <img src="yoga.jpg" alt="Zumba">
+                    <h3>Yoga</h3>
+                    <p>A Yoga é uma prática milenar que une corpo, mente e espírito.</p>
+                    <div class="price">R$ 110/aula ou <span>incluído nos planos</span></div>
+                    <button class="btn add-to-cart" data-name="Aula de Zumba" data-price="15">Agendar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="treinadores" id="treinadores">
+        <h1 class="heading">Nossos <span>Treinadores</span></h1>
+        <div class="box-container">
+            <div class="trainer-box">
+                <div class="trainer-3d">
+                    <img src="trinador1z.jpg" alt="Treinador 1">
+                    <h3>Carlos Silva</h3>
+                    <span>Especialista em Musculação</span>
+                    <p>10 anos de experiência em treinamento físico e nutrição esportiva.</p>
+                    <div class="share">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                        <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-box">
+                <div class="trainer-3d">
+                    <img src="triandora1.jpg" alt="Treinadora 2">
+                    <h3>Ana Oliveira</h3>
+                    <span>Instrutora de Yoga</span>
+                    <p>Certificada internacionalmente com formação na Índia.</p>
+                    <div class="share">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                        <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="trainer-box">
+                <div class="trainer-3d">
+                    <img src="trinador2.jpg" alt="Treinador 3">
+                    <h3>Marcos Rocha</h3>
+                    <span>Instrutor de CrossFit</span>
+                    <p>Campeão regional de CrossFit e especialista em treinamento funcional.</p>
+                    <div class="share">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                        <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <section class="contato" id="contato">
+        <h1 class="heading">Fale <span>Conosco</span></h1>
+        <div class="row">
+            <div class="contact-3d">
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0754267452926!2d-46.65342658502213!3d-23.565734367638795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1629839390973!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <form action="">
+                <h3>Entre em Contato</h3>
+                <div class="inputBox">
+                    <span class="fas fa-user"></span>
+                    <input type="text" placeholder="Nome">
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-envelope"></span>
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-phone"></span>
+                    <input type="number" placeholder="Telefone">
+                </div>
+                <div class="inputBox">
+                    <span class="fas fa-comment"></span>
+                    <textarea placeholder="Mensagem"></textarea>
+                </div>
+                <input type="submit" value="Enviar Mensagem" class="btn">
+            </form>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+            <a href="#" class="fab fa-pinterest"></a>
+        </div>
+        <div class="links">
+            <a href="#home">Home</a>
+            <a href="#planos">Planos</a>
+            <a href="#aulas">Aulas</a>
+            <a href="#treinadores">Treinadores</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <div class="credit">Criado por <span>PowerFit Academy</span> | Todos os direitos reservados</div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="java.js"></script>
+</body>
+</html>
