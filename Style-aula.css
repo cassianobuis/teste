@@ -1,0 +1,477 @@
+/* Estilos Globais */
+:root {
+    --primary: #ff4757;
+    --secondary: #000000;
+    --light: #ffffff;
+    --dark: #1e272e;
+    --white: #ffffff;
+    --gray: #777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5rem 9%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 4rem;
+    color: var(--secondary);
+}
+
+.heading span {
+    color: var(--primary);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: var(--primary);
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: #e05512;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--secondary);
+    box-shadow: 0 0.5rem 1rem rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--white);
+    margin: 0 1.5rem;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+.icons div {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.icons div:hover {
+    color: var(--primary);
+}
+
+#menu-btn {
+    display: none;
+}
+
+/* Seção de Aulas */
+.aulas .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.aula-box {
+    background: var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.aula-box:hover {
+    transform: translateY(-1rem);
+}
+
+.aula-3d {
+    padding: 2rem;
+    text-align: center;
+}
+
+.aula-3d img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.aula-3d h3 {
+    font-size: 2.2rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.aula-3d p {
+    font-size: 1.5rem;
+    color: var(--gray);
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.price {
+    font-size: 2rem;
+    color: var(--secondary);
+    padding: 1rem 0;
+    font-weight: 600;
+}
+
+.price span {
+    font-size: 1.5rem;
+    color: var(--primary);
+    text-decoration: line-through;
+}
+
+/* Footer */
+.footer {
+    background: var(--secondary);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.share {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.share a {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.share a:hover {
+    background: var(--primary);
+    transform: rotate(360deg);
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.links a {
+    color: var(--white);
+    font-size: 1.7rem;
+}
+
+.links a:hover {
+    color: var(--primary);
+}
+
+.credit {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 300;
+    padding-top: 1.5rem;
+}
+
+.credit span {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Responsividade */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .header {
+        padding: 2rem;
+    }
+    
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+/* Estilos para o modal do carrinho */
+.cart-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.cart-content {
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 40rem;
+    position: relative;
+}
+
+.close-cart {
+    color: var(--dark);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#cart-items-list {
+    list-style: none;
+    max-height: 20rem;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+#cart-items-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--gray);
+    font-size: 1.6rem;
+}
+
+.total {
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+#checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.8rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+#checkout-btn:hover {
+    background-color: #e05512;
+}
+
+/* Estilos para o badge do carrinho */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+    
+    .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: var(--secondary);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    
+    .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    .navbar a {
+        display: block;
+        margin: 2rem;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    
+    .heading {
+        font-size: 3rem;
+    }
+}
+/* Shopping Cart */
+.shopping-cart {
+    position: fixed;
+    top: 0;
+    right: -110%;
+    width: 35rem;
+    height: 100vh;
+    background: var(--light);
+    padding: 2rem;
+    overflow-y: auto;
+    z-index: 1001;
+    transition: right 0.3s ease;
+}
+
+.shopping-cart.active {
+    right: 0;
+}
+
+.shopping-cart .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ffffff;
+}
+
+.shopping-cart .cart-header h3 {
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+.shopping-cart .close-cart {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--secondary);
+}
+
+.shopping-cart .close-cart:hover {
+    color: var(--primary);
+}
+
+.shopping-cart .cart-items {
+    margin-bottom: 2rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+.cart-item .item-details h4 {
+    font-size: 1.6rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.cart-item .item-details .price {
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.cart-item .remove-item {
+    margin-left: auto;
+    color: var(--primary);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.cart-total {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cart-total h4 {
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+.cart-total .total {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+.checkout-btn:hover {
+    background: var(--secondary);
+}
