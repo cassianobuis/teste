@@ -1,0 +1,310 @@
+/* Estilos Gerais */
+:root {
+    --primary: #ff3838;
+    --secondary: #333;
+    --light: #fff;
+    --dark: #000000;
+    --text: #777;
+    --bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg);
+    color: var(--primary);
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--secondary);
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+.heading span {
+    color: var(--primary);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: var(--primary);
+    color: var(--secondary);
+    font-size: 1.7rem;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+
+.btn:hover {
+    background: #ff4d4d;
+    transform: scale(1.05);
+}
+
+/* Header */
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: var(--dark);
+    box-shadow: 0 .5rem 1rem rgb(0, 0, 0);
+}
+
+.header .logo h1 {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--light);
+}
+
+.header .logo h1 span {
+    color: var(--primary);
+}
+
+.header .navbar a {
+    font-size: 1.7rem;
+    margin: 0 1rem;
+    color: var(--light);
+}
+
+.header .navbar a:hover,
+.header .navbar a.active {
+    color: var(--primary);
+}
+
+.header .icons div {
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color: var(--secondary);
+    cursor: pointer;
+}
+
+.header .icons div:hover {
+    color: var(--primary);
+}
+
+#menu-btn {
+    display: none;
+}
+
+/* Treinadores */
+.treinadores {
+    padding-top: 8rem;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.trainer-box {
+    background: var(--light);
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    overflow: hidden;
+    text-align: center;
+    padding: 2rem;
+}
+
+.trainer-box:hover {
+    transform: translateY(-1rem);
+}
+
+.trainer-3d {
+    perspective: 1000px;
+}
+
+.trainer-3d img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    border-radius: 70%; /* Increased to make images more rounded */
+    margin-bottom: 1rem;
+    transition: transform 0.5s;
+}
+
+.trainer-box:hover .trainer-3d img {
+    transform: rotateY(20deg);
+}
+
+.trainer-box h3 {
+    font-size: 2.2rem;
+    color: var(--secondary);
+    margin: 1rem 0;
+}
+
+.trainer-box span {
+    font-size: 1.5rem;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.trainer-box p {
+    font-size: 1.4rem;
+    color: var(--text);
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.share {
+    margin-top: 2rem;
+}
+
+.share a {
+    height: 4rem;
+    width: 4rem;
+    line-height: 4rem;
+    font-size: 2rem;
+    color: var(--secondary);
+    background: #eee;
+    border-radius: 50%;
+    margin: 0 .3rem;
+}
+
+.share a:hover {
+    background: var(--primary);
+    color: var(--light);
+}
+
+/* Contato */
+.contato .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.contato .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    height: 50rem;
+    border-radius: 1rem;
+}
+
+.contato .row form {
+    flex: 1 1 45rem;
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+.contato .row form h3 {
+    font-size: 3rem;
+    color: var(--secondary);
+    margin-bottom: 2rem;
+}
+
+.contato .row form .inputBox {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.contato .row form .inputBox input,
+.contato .row form .inputBox textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    background: #f0f0f0;
+    border-radius: .5rem;
+}
+
+.contato .row form .inputBox textarea {
+    height: 15rem;
+    resize: none;
+}
+
+.contato .row form .inputBox span {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    color: var(--text);
+    font-size: 1.6rem;
+}
+
+/* Responsivo */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .header {
+        padding: 2rem;
+    }
+    
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+    
+    .header .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: var(--light);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    
+    .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    .header .navbar a {
+        display: block;
+        margin: 2rem;
+        font-size: 2rem;
+    }
+    
+    .contato .row {
+        flex-direction: column;
+    }
+    
+    .contato .row .map {
+        height: 30rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+    
+    .heading {
+        font-size: 3rem;
+    }
+}

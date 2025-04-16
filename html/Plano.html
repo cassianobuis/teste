@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlanosPowerfit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/css/Style.planos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>Power<span>Fit</span></h1>
+        </div>
+        <nav class="navbar">
+            <a href="#inicio"></a><a href="inicio.html">inicio</a>
+            <a href="#aulas"></a><a href="aula.html">Aulas</a>
+            <a href="#treinadores"></a><a href="treinadores.html">Treinadores</a>
+            <a href="#contato"></a><a href="contato.html">Contato</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+        
+        <div class="shopping-cart">
+            <div class="cart-header">
+                <h3>Seu Carrinho</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+            <div class="cart-items">
+                </div>
+            </div>
+        </header>
+        <section class="planos" id="planos">
+            <h1 class="heading">Nossos <span>Planos</span></h1>
+            <div class="box-container">
+                <!-- Plano Básico -->
+                <div class="box">
+                    <div class="box-3d">
+                        <h3>Plano Básico</h3>
+                        <div class="price">R$55<span>99</span>/mês</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Acesso à academia</li>
+                            <li><i class="fas fa-check"></i> Horário comercial</li>
+                            <li><i class="fas fa-times"></i> Aulas em grupo</li>
+                            <li><i class="fas fa-times"></i> Acompanhamento</li>
+                        </ul>
+                        <button class="btn add-to-cart" data-name="Plano Básico" data-price="55">Assinar</button>
+                    </div>
+                </div>
+        
+                <!-- Plano Intermediário -->
+                <div class="box">
+                    <div class="box-3d">
+                        <h3>Plano Intermediário</h3>
+                        <div class="price">R$99<span>149</span>/mês</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Acesso à academia</li>
+                            <li><i class="fas fa-check"></i> Horário estendido</li>
+                            <li><i class="fas fa-check"></i> Aulas em grupo</li>
+                            <li><i class="fas fa-times"></i> Acompanhamento</li>
+                        </ul>
+                        <button class="btn add-to-cart" data-name="Plano Intermediário" data-price="99">Assinar</button>
+                    </div>
+                </div>
+        
+                <!-- Plano Premium -->
+                <div class="box">
+                    <div class="box-3d">
+                        <h3>Plano Premium</h3>
+                        <div class="price">R$149<span>249</span>/mês</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Acesso 24 horas</li>
+                            <li><i class="fas fa-check"></i> Aulas ilimitadas</li>
+                            <li><i class="fas fa-check"></i> Acompanhamento</li>
+                            <li><i class="fas fa-check"></i> Avaliação física</li>
+                        </ul>
+                        <button class="btn add-to-cart" data-name="Plano Premium" data-price="149">Assinar</button>
+                    </div>
+                </div>
+        
+                <!-- Plano Gold (novo) -->
+                <div class="box">
+                    <div class="box-3d">
+                        <div class="popular-badge">Popular</div>
+                        <h3>Plano Gold</h3>
+                        <div class="price">R$199<span>349</span>/mês</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Acesso 24 horas</li>
+                            <li><i class="fas fa-check"></i> Aulas ilimitadas</li>
+                            <li><i class="fas fa-check"></i> Personal trainer</li>
+                            <li><i class="fas fa-check"></i> Avaliação física</li>
+                            <li><i class="fas fa-check"></i> Nutricionista 1x/mês</li>
+                        </ul>
+                        <button class="btn add-to-cart" data-name="Plano Gold" data-price="199">Assinar</button>
+                    </div>
+                </div>
+        
+                <!-- Plano Platinum (novo) -->
+                <div class="box">
+                    <div class="box-3d">
+                        <h3>Plano Platinum</h3>
+                        <div class="price">R$299<span>499</span>/mês</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Acesso 24 horas</li>
+                            <li><i class="fas fa-check"></i> Aulas ilimitadas</li>
+                            <li><i class="fas fa-check"></i> Personal trainer</li>
+                            <li><i class="fas fa-check"></i> Avaliação semanal</li>
+                            <li><i class="fas fa-check"></i> Nutricionista 2x/mês</li>
+                            <li><i class="fas fa-check"></i> Massagem 1x/mês</li>
+                        </ul>
+                        <button class="btn add-to-cart" data-name="Plano Platinum" data-price="299">Assinar</button>
+                    </div>
+                </div>
+        
+                <!-- Plano Família (novo) -->
+                <div class="box">
+                    <div class="box-3d">
+                        <h3>Plano Família</h3>
+                        <div class="price">R$399<span>699</span>/mês</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i> 4 pessoas</li>
+                            <li><i class="fas fa-check"></i> Acesso 24 horas</li>
+                            <li><i class="fas fa-check"></i> Aulas ilimitadas</li>
+                            <li><i class="fas fa-check"></i> Personal trainer</li>
+                            <li><i class="fas fa-check"></i> Avaliação física</li>
+                            <li><i class="fas fa-check"></i> Desconto em suplementos</li>
+                        </ul>
+                        <button class="btn add-to-cart" data-name="Plano Família" data-price="399">Assinar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script src="/js/Java.planos.js"></script>
+</body>
