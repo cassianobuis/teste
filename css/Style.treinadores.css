@@ -76,7 +76,7 @@ section {
     justify-content: space-between;
     padding: 2rem 9%;
     background: var(--dark);
-    box-shadow: 0 .5rem 1rem rgb(0, 0, 0);
+    box-shadow: 0 .5rem 1rem rgb(255, 0, 0);
 }
 
 .header .logo h1 {
@@ -129,7 +129,7 @@ section {
 .trainer-box {
     background: var(--light);
     border-radius: 1rem;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    box-shadow: 0 .5rem 1rem rgb(0, 0, 0);
     overflow: hidden;
     text-align: center;
     padding: 2rem;

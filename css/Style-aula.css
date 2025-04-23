@@ -1,4 +1,6 @@
-/* Estilos Globais */
+/* ============================================= */
+/* VARIÁVEIS GLOBAIS */
+/* ============================================= */
 :root {
     --primary: #ff4757;
     --secondary: #000000;
@@ -6,8 +8,13 @@
     --dark: #1e272e;
     --white: #ffffff;
     --gray: #777;
+    --shadow: 0 0.5rem 1rem rgb(0, 0, 0);
+    --transition: all 0.2s linear;
 }
 
+/* ============================================= */
+/* RESET E ESTILOS BASE */
+/* ============================================= */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +23,7 @@
     text-decoration: none;
     outline: none;
     border: none;
-    transition: all 0.2s linear;
+    transition: var(--transition);
 }
 
 html {
@@ -36,6 +43,9 @@ section {
     padding: 5rem 9%;
 }
 
+/* ============================================= */
+/* COMPONENTES REUTILIZÁVEIS */
+/* ============================================= */
 .heading {
     text-align: center;
     margin-bottom: 4rem;
@@ -63,10 +73,12 @@ section {
 .btn:hover {
     background: #e05512;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.1);
 }
 
-/* Header */
+/* ============================================= */
+/* HEADER */
+/* ============================================= */
 .header {
     position: relative;
     top: 0;
@@ -74,7 +86,7 @@ section {
     right: 0;
     z-index: 1000;
     background: var(--secondary);
-    box-shadow: 0 0.5rem 1rem rgb(255, 255, 255);
+    box-shadow: 0 0.5rem 1rem rgb(255, 0, 0);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -96,10 +108,16 @@ section {
     color: var(--white);
     margin: 0 1.5rem;
     font-weight: 600;
+    transition: var(--transition);
 }
 
 .navbar a:hover {
     color: var(--primary);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
 }
 
 .icons div {
@@ -107,6 +125,8 @@ section {
     margin-left: 2rem;
     cursor: pointer;
     color: var(--white);
+    position: relative;
+    transition: var(--transition);
 }
 
 .icons div:hover {
@@ -117,7 +137,9 @@ section {
     display: none;
 }
 
-/* Seção de Aulas */
+/* ============================================= */
+/* SEÇÃO DE AULAS */
+/* ============================================= */
 .aulas .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -129,7 +151,7 @@ section {
     background: var(--white);
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
     transition: transform 0.3s ease;
 }
 
@@ -176,81 +198,127 @@ section {
     text-decoration: line-through;
 }
 
-/* Footer */
-.footer {
-    background: var(--secondary);
-    text-align: center;
-    padding: 3rem 2rem;
+/* ============================================= */
+/* SHOPPING CART */
+/* ============================================= */
+.shopping-cart {
+    position: fixed;
+    top: 0;
+    right: -110%;
+    width: 35rem;
+    height: 100vh;
+    background: var(--light);
+    padding: 2rem;
+    overflow-y: auto;
+    z-index: 1001;
+    transition: right 0.3s ease;
 }
 
-.share {
+.shopping-cart.active {
+    right: 0;
+}
+
+.shopping-cart .cart-header {
     display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray);
 }
 
-.share a {
-    height: 4.5rem;
-    width: 4.5rem;
-    line-height: 4.5rem;
-    border-radius: 50%;
+.shopping-cart .cart-header h3 {
     font-size: 2rem;
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
+    color: var(--secondary);
 }
 
-.share a:hover {
-    background: var(--primary);
-    transform: rotate(360deg);
+.shopping-cart .close-cart {
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--secondary);
+    transition: var(--transition);
 }
 
-.links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
+.shopping-cart .close-cart:hover {
+    color: var(--primary);
+}
+
+.shopping-cart .cart-items {
     margin-bottom: 2rem;
 }
 
-.links a {
-    color: var(--white);
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray);
+}
+
+.cart-item img {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+}
+
+.cart-item .item-details h4 {
+    font-size: 1.6rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+}
+
+.cart-item .item-details .price {
+    font-size: 1.4rem;
+    color: var(--primary);
+}
+
+.cart-item .remove-item {
+    margin-left: auto;
+    color: var(--primary);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cart-item .remove-item:hover {
+    transform: scale(1.1);
+}
+
+.cart-total {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cart-total h4 {
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+.cart-total .total {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: var(--light);
     font-size: 1.7rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-.links a:hover {
-    color: var(--primary);
+.checkout-btn:hover {
+    background: var(--secondary);
 }
 
-.credit {
-    font-size: 1.5rem;
-    color: var(--white);
-    font-weight: 300;
-    padding-top: 1.5rem;
-}
-
-.credit span {
-    color: var(--primary);
-    font-weight: 600;
-}
-
-/* Responsividade */
-@media (max-width: 991px) {
-    html {
-        font-size: 55%;
-    }
-    
-    .header {
-        padding: 2rem;
-    }
-    
-    section {
-        padding: 3rem 2rem;
-    }
-}
-
-/* Estilos para o modal do carrinho */
+/* ============================================= */
+/* CART MODAL */
+/* ============================================= */
 .cart-modal {
     display: none;
     position: fixed;
@@ -260,7 +328,7 @@ section {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .cart-content {
@@ -281,6 +349,11 @@ section {
     font-size: 3rem;
     font-weight: bold;
     cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-cart:hover {
+    color: var(--primary);
 }
 
 #cart-items-list {
@@ -311,19 +384,19 @@ section {
     color: var(--white);
     border-radius: 0.5rem;
     cursor: pointer;
+    transition: var(--transition);
 }
 
 #checkout-btn:hover {
     background-color: #e05512;
 }
 
-/* Estilos para o badge do carrinho */
 .cart-count {
     position: absolute;
     top: -5px;
     right: -5px;
     background: var(--primary);
-    color: white;
+    color: var(--white);
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -334,18 +407,99 @@ section {
     font-weight: bold;
 }
 
+/* ============================================= */
+/* FOOTER */
+/* ============================================= */
+.footer {
+    background: var(--secondary);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.share {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.share a {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.share a:hover {
+    background: var(--primary);
+    transform: rotate(360deg);
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.links a {
+    color: var(--white);
+    font-size: 1.7rem;
+    transition: var(--transition);
+}
+
+.links a:hover {
+    color: var(--primary);
+}
+
+.credit {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 300;
+    padding-top: 1.5rem;
+}
+
+.credit span {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE */
+/* ============================================= */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .header {
+        padding: 2rem;
+    }
+    
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     #menu-btn {
         display: inline-block;
     }
     
     .navbar {
-        position: absolute;
+        position: relative;
         top: 99%;
         left: 0;
         right: 0;
         background: var(--secondary);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.3s;
     }
     
     .navbar.active {
@@ -367,111 +521,13 @@ section {
     .heading {
         font-size: 3rem;
     }
-}
-/* Shopping Cart */
-.shopping-cart {
-    position: fixed;
-    top: 0;
-    right: -110%;
-    width: 35rem;
-    height: 100vh;
-    background: var(--light);
-    padding: 2rem;
-    overflow-y: auto;
-    z-index: 1001;
-    transition: right 0.3s ease;
-}
-
-.shopping-cart.active {
-    right: 0;
-}
-
-.shopping-cart .cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ffffff;
-}
-
-.shopping-cart .cart-header h3 {
-    font-size: 2rem;
-    color: var(--secondary);
-}
-
-.shopping-cart .close-cart {
-    font-size: 2.5rem;
-    cursor: pointer;
-    color: var(--secondary);
-}
-
-.shopping-cart .close-cart:hover {
-    color: var(--primary);
-}
-
-.shopping-cart .cart-items {
-    margin-bottom: 2rem;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #eee;
-}
-
-.cart-item img {
-    width: 7rem;
-    height: 7rem;
-    object-fit: cover;
-    margin-right: 1rem;
-}
-
-.cart-item .item-details h4 {
-    font-size: 1.6rem;
-    color: var(--secondary);
-    margin-bottom: 0.5rem;
-}
-
-.cart-item .item-details .price {
-    font-size: 1.4rem;
-    color: var(--primary);
-}
-
-.cart-item .remove-item {
-    margin-left: auto;
-    color: var(--primary);
-    font-size: 1.6rem;
-    cursor: pointer;
-}
-
-.cart-total {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.cart-total h4 {
-    font-size: 2rem;
-    color: var(--secondary);
-}
-
-.cart-total .total {
-    color: var(--primary);
-    font-weight: bold;
-}
-
-.checkout-btn {
-    width: 100%;
-    padding: 1rem;
-    background: var(--primary);
-    color: var(--light);
-    font-size: 1.7rem;
-    border-radius: .5rem;
-    cursor: pointer;
-}
-
-.checkout-btn:hover {
-    background: var(--secondary);
+    
+    .aula-box {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+    
+    .shopping-cart {
+        width: 100%;
+    }
 }
