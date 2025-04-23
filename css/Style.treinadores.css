@@ -308,3 +308,12 @@ section {
         font-size: 3rem;
     }
 }
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-img {
+    height: 40px; /* Ajuste conforme necessário */
+    width: auto;
+}

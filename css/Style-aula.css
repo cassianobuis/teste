@@ -408,69 +408,6 @@ section {
 }
 
 /* ============================================= */
-/* FOOTER */
-/* ============================================= */
-.footer {
-    background: var(--secondary);
-    text-align: center;
-    padding: 3rem 2rem;
-}
-
-.share {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.share a {
-    height: 4.5rem;
-    width: 4.5rem;
-    line-height: 4.5rem;
-    border-radius: 50%;
-    font-size: 2rem;
-    color: var(--white);
-    background: rgba(255, 255, 255, 0.1);
-    transition: var(--transition);
-}
-
-.share a:hover {
-    background: var(--primary);
-    transform: rotate(360deg);
-}
-
-.links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.links a {
-    color: var(--white);
-    font-size: 1.7rem;
-    transition: var(--transition);
-}
-
-.links a:hover {
-    color: var(--primary);
-}
-
-.credit {
-    font-size: 1.5rem;
-    color: var(--white);
-    font-weight: 300;
-    padding-top: 1.5rem;
-}
-
-.credit span {
-    color: var(--primary);
-    font-weight: 600;
-}
-
-/* ============================================= */
 /* RESPONSIVIDADE */
 /* ============================================= */
 @media (max-width: 991px) {
@@ -530,4 +467,13 @@ section {
     .shopping-cart {
         width: 100%;
     }
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-img {
+    height: 40px; /* Ajuste conforme necessário */
+    width: auto;
 }

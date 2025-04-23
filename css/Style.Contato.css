@@ -203,10 +203,12 @@ form h3 {
 }
 /* Footer */
 .footer {
-    background: var(--dark);
+    background: var(--secondary-color);
+    padding: 5rem 9%;
     text-align: center;
-    padding: 3rem 2rem;
+    color: rgb(255, 255, 255);
 }
+
 .share {
     display: flex;
     justify-content: center;
@@ -218,7 +220,7 @@ form h3 {
     height: 5rem;
     line-height: 5rem;
     font-size: 2rem;
-    color: rgb(255, 255, 255);
+    color: white;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     margin: 0 0.5rem;
@@ -234,22 +236,31 @@ form h3 {
 }
 
 .links a {
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 1.7rem;
     margin: 0 1.5rem;
 }
 
 .links a:hover {
-    color: var(--primary);
+    color: var(--primary-color);
 }
 
 .credit {
     font-size: 1.5rem;
     padding-top: 2rem;
-    border-top: 0.1rem solid rgb(255, 255, 255);
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
 }
 
 .credit span {
-    color: var(--secondary);
+    color: var(--primary-color);
     font-weight: 600;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-img {
+    height: 40px; /* Ajuste conforme necessário */
+    width: auto;
 }
